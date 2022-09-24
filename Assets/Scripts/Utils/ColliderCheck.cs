@@ -1,14 +1,9 @@
 using UnityEngine;
 
-namespace Scripts.Utils
+namespace Utils
 {
-    public class ColliderCheck : MonoBehaviour
+    public class ColliderCheck : LayerCheck
     {
-        [SerializeField] private LayerMask _layer;
-        [SerializeField] private bool _isTouchingLayer;
-
-        public bool IsTouchingLayer => _isTouchingLayer;
-        
         private Collider2D _collider;
         
         private void Awake()

@@ -130,6 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01537f841b9a4e24e86806dfa971632c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 9167821883677750431}
+  _sprite: {fileID: 1394595804}
+  _isBlinking: 0
+  _blinkDuration: 2
 --- !u!60 &9167821883677750431
 PolygonCollider2D:
   m_ObjectHideFlags: 0

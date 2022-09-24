@@ -1,16 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Scripts.Characters.Player
+namespace Characters.Player
 {
     public class PlayerInputReader : MonoBehaviour
     {
-        [SerializeField] private Player _player;
+        [SerializeField] private global::Characters.Player.Player _player;
 
         public void OnMovement(InputAction.CallbackContext context)
         {
             var direction = context.ReadValue<Vector2>();
             _player.SetDirection(direction);
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _player.DoAttack();
+            }
+        }
+
+        public void OnInvisible(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _player.SetInvisible();
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Scripts.Utils
+namespace Utils
 {
     public class EnterTrigger : MonoBehaviour
     {

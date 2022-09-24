@@ -1,69 +1,64 @@
-﻿using Scripts.Utils;
+﻿using System;
 using UnityEngine;
+using Utils;
 
-
-namespace Scripts.Characters.Player
+namespace Characters.Player
 {
-    public class Player : MonoBehaviour
+    public class Player : Character
     {
-        [Range(0, 10)] [SerializeField] private float _speed;
-        [Range(0, 10)] [SerializeField] private float _jumpForce;
-
-        [SerializeField] private ColliderCheck _groundCheck;
-
         private static readonly int Attack = Animator.StringToHash("Attack");
-        private static readonly int Death = Animator.StringToHash("Death");
 
-        private Vector2 _direction;
-        private Rigidbody2D _rigidbody;
-        private bool _isGrounded;
-        private Animator _animator;
+        [SerializeField] private Transform _attackPoint;
+        [SerializeField] private float _attackRange;
+        [SerializeField] private LayerMask _enemyLayers;
+        [SerializeField] private Collider2D _lightCheck;
+        
+        private SpriteRenderer _sprite;
 
-        private void Awake()
+        private Color _default;
+        
+        protected override void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
+            base.Awake();
+            _sprite = GetComponent<SpriteRenderer>();
+            _default = _sprite.color;
         }
 
-        private void Update()
+        public void DoAttack()
         {
-            _isGrounded = _groundCheck.IsTouchingLayer;
+            Animator.SetTrigger(Attack);
         }
 
-        public void SetDirection(Vector2 direction)
+        public void SetInvisible()
         {
-            _direction = direction;
+            _sprite.color = new Color(1f,1f,1f, 0.5f);
+            _lightCheck.enabled = false;
+            Invoke(nameof(ResetToDefault), 2f);
+        }
+
+        private void ResetToDefault()
+        {
+            _sprite.color = _default;
+            _lightCheck.enabled = true;
+        }
+
+        public void Check()
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayers);
+
+            foreach (var enemy in hitEnemies)
+            {
+               var mortal = enemy.GetInterface<IMortal>();
+                mortal.Dead();
+            }
         }
         
-        private  float CalculateJumpVelocity(float yVelocity)
-        {
-
-            if (_isGrounded)
-            {
-                yVelocity = _jumpForce;
-            }
-
-            return yVelocity;
-        }
         
-        private  float CalculateYVelocity()
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
         {
-            var yVelocity = _rigidbody.velocity.y;
-            var isJumpPressing = _direction.y > 0;
-
-            if (isJumpPressing)
-            {
-                var isFalling = _rigidbody.velocity.y <= 0.001f;
-                yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
-            }
-            return yVelocity;
-        }
-
-        private void FixedUpdate()
-        {
-            var xVelocity = _direction.x * _speed;
-            var yVelocity = CalculateYVelocity();
-            _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
-        }
+            Gizmos.DrawWireSphere(_attackPoint.position,  _attackRange);
+        } 
+#endif
     }
 }
