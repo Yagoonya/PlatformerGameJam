@@ -10,11 +10,12 @@ namespace Characters
         
         [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] private bool _invertScale;
+        [SerializeField] protected bool _isControllable = true;
         
         private static readonly int Death = Animator.StringToHash("Death");
         
         private bool _isGrounded;
-        private Vector2 _direction;
+        protected Vector2 _direction;
         private Rigidbody2D _rigidbody;
         
         protected Animator Animator;
@@ -32,7 +33,10 @@ namespace Characters
         
         public void SetDirection(Vector2 direction)
         {
-            _direction = direction;
+            if (_isControllable)
+            {
+                _direction = direction;
+            }
         }
 
         private  float CalculateJumpVelocity(float yVelocity)

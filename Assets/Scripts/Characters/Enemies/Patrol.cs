@@ -25,8 +25,6 @@ namespace Characters.Enemies
         {
             StartCoroutine(DoPatrol());
         }
-        
-        
 
         private IEnumerator DoPatrol()
         {
@@ -38,10 +36,14 @@ namespace Characters.Enemies
                 }
                 else
                 {
+                    _charcter.SetDirection(Vector2.zero);
+                    _animator.SetBool(Blink, true);
                     _direction = -_direction;
-                    _charcter.SetDirection(new Vector2(_direction, 0));
+                    yield return new WaitForSeconds(1.7f);
+                    _charcter.transform.localScale = new Vector3(_direction, 1, 1);
+                    _animator.SetBool(Blink, false);
                 }
-                
+
                 yield return null;
             }
         }

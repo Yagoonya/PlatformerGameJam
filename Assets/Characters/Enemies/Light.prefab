@@ -133,6 +133,9 @@ MonoBehaviour:
   _collider: {fileID: 9167821883677750431}
   _sprite: {fileID: 1394595804}
   _isBlinking: 0
+  _layer:
+    serializedVersion: 2
+    m_Bits: 1024
   _blinkDuration: 2
 --- !u!60 &9167821883677750431
 PolygonCollider2D:

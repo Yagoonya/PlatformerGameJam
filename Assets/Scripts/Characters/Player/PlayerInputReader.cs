@@ -5,7 +5,7 @@ namespace Characters.Player
 {
     public class PlayerInputReader : MonoBehaviour
     {
-        [SerializeField] private global::Characters.Player.Player _player;
+        [SerializeField] private Player _player;
 
         public void OnMovement(InputAction.CallbackContext context)
         {
@@ -25,7 +25,7 @@ namespace Characters.Player
         {
             if (context.performed)
             {
-                _player.SetInvisible();
+                _player.HideInObject();
             }
         }
     }
