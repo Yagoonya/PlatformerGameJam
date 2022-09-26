@@ -24,9 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Invisability",
+                    "name": "HideInObject",
                     "type": "Button",
                     "id": "0405a363-37a8-4ef2-9423-f9fceeba5f46",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchWorld",
+                    "type": "Button",
+                    "id": "87d7e5a9-c15a-4c27-ac48-080323fc6c77",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -96,7 +105,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Invisability",
+                    "action": "HideInObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "988b96ed-b271-47e3-8cf7-70b7c0700259",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchWorld",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

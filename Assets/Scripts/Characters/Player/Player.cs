@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
 using Utils;
+using WorldsSwitch;
 
 namespace Characters.Player
 {
@@ -19,7 +19,8 @@ namespace Characters.Player
         
         private SpriteRenderer _sprite;
         private int _defaultLayer;
-        
+
+        private WorldSwitcher _switcher;
 
         private Color _default;
         private bool _isVisible = true;
@@ -29,6 +30,7 @@ namespace Characters.Player
         protected override void Awake()
         {
             base.Awake();
+            _switcher = FindObjectOfType<WorldSwitcher>();
             _sprite = GetComponent<SpriteRenderer>();
             _defaultLayer = gameObject.layer;
             _default = _sprite.color;
@@ -67,6 +69,11 @@ namespace Characters.Player
             _isVisible = false;
             _sprite.color = new Color(1f,1f,1f, 0.5f);
             gameObject.layer = 9;
+        }
+
+        public void SwitchWorld()
+        {
+            _switcher.SwitchWorld();
         }
 
         public void ReloadAfterAnimation()

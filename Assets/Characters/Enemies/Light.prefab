@@ -93,8 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9167821883677750416}
-  - component: {fileID: 9167821883677750430}
   - component: {fileID: 9167821883677750431}
+  - component: {fileID: 562946368}
+  - component: {fileID: 5678736029751637836}
   m_Layer: 7
   m_Name: Light
   m_TagString: Untagged
@@ -118,25 +119,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9167821883677750430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9167821883677750417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01537f841b9a4e24e86806dfa971632c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: 9167821883677750431}
-  _sprite: {fileID: 1394595804}
-  _isBlinking: 0
-  _layer:
-    serializedVersion: 2
-    m_Bits: 1024
-  _blinkDuration: 2
 --- !u!60 &9167821883677750431
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +147,50 @@ PolygonCollider2D:
     - - {x: 0, y: 0}
       - {x: 3, y: 0.7}
       - {x: 3, y: -0.7}
+--- !u!114 &562946368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167821883677750417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f78e5429ba40ee8c7fdc20e86fbd72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 1024
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5678736029751637836}
+        m_TargetAssemblyTypeName: LightComponent, Assembly-CSharp
+        m_MethodName: KillPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5678736029751637836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9167821883677750417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b2ac7dee0e48f696f5d2308419bd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 9167821883677750431}
+  _sprite: {fileID: 1394595804}
+  _isBlinking: 1
+  _blinkDuration: 2
