@@ -21,12 +21,7 @@ namespace Characters.Enemies
             _animator = GetComponent<Animator>();
         }
 
-        private void Start()
-        {
-            StartCoroutine(DoPatrol());
-        }
-
-        private IEnumerator DoPatrol()
+        public IEnumerator DoPatrol()
         {
             while (enabled)
             {
