@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,6 +69,30 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +102,868 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sounder_Warning_list_0
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 104
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d815247bd63aa140995121c32f8e4f7
+      internalID: 1010731114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_1
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 105
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029cd9dbe00df04498a7da8a90a83357
+      internalID: 1174837850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_2
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 105
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b84c1d761c00d74d8380ea66c237bf4
+      internalID: -341720492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_3
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 110
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182203de4f20af24aa8aef0f58e57fdc
+      internalID: -1126293178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_4
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 104
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9e437823346874e8e07bc9c32db2ec
+      internalID: 1352534180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_5
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 110
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59c78ccbbcdc28418039b5508799852
+      internalID: 698116484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_6
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 110
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0fe71f03cca8b4a9c1a63109b28a42
+      internalID: -1908840654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_7
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 100
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03788d83ddbdd274aae67fa6201f9bc8
+      internalID: -1690944251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_8
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 112
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be31b8f8fad35142b8636492daf1658
+      internalID: 1267006621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_9
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 105
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f698498dcc77e74fbbd22c4ec5db13d
+      internalID: 852613447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_10
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 116
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a0154b980d32a4783133af8239e60e
+      internalID: -798639525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_11
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 103
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa28f652fccd9f41963c34fecedd525
+      internalID: 1981071399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_12
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 119
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1836536945ae64d9ab769d3fbf9dab
+      internalID: 2097752265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_13
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 109
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa60e0f47a3c664ebe8454ef6b27ec3
+      internalID: 246845854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_14
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 116
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d008b015c3af95943b4605692cf9a091
+      internalID: 1899606801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_15
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 108
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5972effbbae3f4488cdeddf74b3ba2
+      internalID: 1838705614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_16
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 119
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db31b075789592418c39603b39354b0
+      internalID: 495104058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_17
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 108
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9356823414c151b4b9e0c0b8080d05ef
+      internalID: 1833052482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_18
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 113
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e483d211963a844f91b863d8279da74
+      internalID: 1055019284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_19
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 4
+        width: 33
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f7e0af07c09dc4f83b54197913f4f5
+      internalID: 722059276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_20
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 4
+        width: 30
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a909580f76af3468b643a4130ccc20
+      internalID: -1814872301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_21
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 98
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51190ea89de0944a9603668cb3e90f0
+      internalID: 1084068649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_22
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 100
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e25545642e30a848a329e83ed398008
+      internalID: -645212245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_23
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 98
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ae803525e05864885165bc7dba3a1a
+      internalID: 1638138362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_24
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 100
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbec7533ee04ce4fb42e764ba4506b1
+      internalID: -1800223056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_25
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 98
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68909337e4855f46b892675fce6bf29
+      internalID: 1535819296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_26
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 88
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4a7270065c24a47973b1a1fca127fd
+      internalID: 1183192757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_27
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 4
+        width: 38
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb8f965a2a9fb4499e9a11ac690a224
+      internalID: -113621332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_28
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 84
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71b50d4d8fecaf4a95c6a79c4c0fe90
+      internalID: -890302121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_29
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 4
+        width: 30
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc3e1dfc80b6ff43b1c003c3e3d9da8
+      internalID: 1418303056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_30
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 4
+        width: 31
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfbe06a09745dc34bbf48acff45a039b
+      internalID: -498098534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_31
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 4
+        width: 30
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa34560664509f438eb3a3ab92e0352
+      internalID: -677283380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_32
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 4
+        width: 31
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870f961e2d3421043a035f2baa0c80c1
+      internalID: 1263029298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_33
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 4
+        width: 29
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfa2f2fa97d6a94c910c26924f5813b
+      internalID: 1021417745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_34
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 4
+        width: 31
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945f7622383602e49b36d2298e4f6f6c
+      internalID: -2015388314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_35
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 4
+        width: 30
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6408bcbf26a9f524e8351473d4e37a13
+      internalID: 1824370999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_36
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 4
+        width: 31
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42402406c287ef40959ac479648dc6c
+      internalID: -207257226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_37
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 4
+        width: 30
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7584b572435dc4292ff98210887b17
+      internalID: 2077919425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_38
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 5
+        width: 30
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675c7b956f82b8b4391cd7c8781a9c7a
+      internalID: -1756165389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_39
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 4
+        width: 40
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc6cd684b004464aade531fe57e398d
+      internalID: 1847148080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sounder_Warning_list_40
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 4
+        width: 37
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957aa64391f9a7549850615a10e8e822
+      internalID: 398444599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +974,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sounder_Warning_list_30: -498098534
+      Sounder_Warning_list_15: 1838705614
+      Sounder_Warning_list_35: 1824370999
+      Sounder_Warning_list_7: -1690944251
+      Sounder_Warning_list_21: 1084068649
+      Sounder_Warning_list_11: 1981071399
+      Sounder_Warning_list_27: -113621332
+      Sounder_Warning_list_8: 1267006621
+      Sounder_Warning_list_1: 1174837850
+      Sounder_Warning_list_36: -207257226
+      Sounder_Warning_list_37: 2077919425
+      Sounder_Warning_list_38: -1756165389
+      Sounder_Warning_list_0: 1010731114
+      Sounder_Warning_list_4: 1352534180
+      Sounder_Warning_list_19: 722059276
+      Sounder_Warning_list_3: -1126293178
+      Sounder_Warning_list_5: 698116484
+      Sounder_Warning_list_9: 852613447
+      Sounder_Warning_list_40: 398444599
+      Sounder_Warning_list_31: -677283380
+      Sounder_Warning_list_6: -1908840654
+      Sounder_Warning_list_12: 2097752265
+      Sounder_Warning_list_2: -341720492
+      Sounder_Warning_list_33: 1021417745
+      Sounder_Warning_list_24: -1800223056
+      Sounder_Warning_list_39: 1847148080
+      Sounder_Warning_list_32: 1263029298
+      Sounder_Warning_list_22: -645212245
+      Sounder_Warning_list_34: -2015388314
+      Sounder_Warning_list_14: 1899606801
+      Sounder_Warning_list_29: 1418303056
+      Sounder_Warning_list_18: 1055019284
+      Sounder_Warning_list_10: -798639525
+      Sounder_Warning_list_16: 495104058
+      Sounder_Warning_list_20: -1814872301
+      Sounder_Warning_list_17: 1833052482
+      Sounder_Warning_list_23: 1638138362
+      Sounder_Warning_list_25: 1535819296
+      Sounder_Warning_list_28: -890302121
+      Sounder_Warning_list_26: 1183192757
+      Sounder_Warning_list_13: 246845854
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

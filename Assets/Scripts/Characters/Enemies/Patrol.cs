@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Utils;
 
@@ -15,6 +14,7 @@ namespace Characters.Enemies
         private Animator _animator;
 
         private static readonly int Blink = Animator.StringToHash("Is-Blinking");
+        private static readonly int Walking = Animator.StringToHash("is-walking");
 
         private void Awake()
         {
@@ -27,10 +27,12 @@ namespace Characters.Enemies
             {
                 if (_platformChecker.IsTouchingLayer && !_obstacleChecker.IsTouchingLayer)
                 {
+                    _animator.SetBool(Walking,true);
                     _charcter.SetDirection(new Vector2(_direction, 0));
                 }
                 else
                 {
+                    _animator.SetBool(Walking,false);
                     _charcter.SetDirection(Vector2.zero);
                     _animator.SetBool(Blink, true);
                     _direction = -_direction;
