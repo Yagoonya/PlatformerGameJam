@@ -28,14 +28,6 @@ namespace Characters.Player
                 _player.HideInObject();
             }
         }
-
-        public void OnSwitchWorld(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _player.SwitchWorld();
-            }
-        }
     }
 }
 

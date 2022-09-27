@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Characters.Player;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Utils
@@ -9,6 +10,15 @@ namespace Utils
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
+        }
+
+        public void KillPlayer(GameObject other)
+        {
+            var player = other.GetComponent<Player>();
+            if (player != null)
+            {
+                player.Dead();
+            }
         }
     }
 }

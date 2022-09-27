@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Characters.Enemies
@@ -13,6 +12,17 @@ namespace Characters.Enemies
         {
             StartCoroutine(SwitchLight());
         }
+        
+        private void OnEnable()
+        {
+            StartCoroutine(SwitchLight());
+        }
+        
+        private void OnDisable()
+        {
+            StopCoroutine(SwitchLight());
+        }
+        
 
         private IEnumerator SwitchLight()
         {

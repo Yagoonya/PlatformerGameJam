@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using Utils;
 
 namespace Characters.Enemies
 {
     public class ListenerBehaviour : MonoBehaviour
     {
+        [SerializeField] private Cooldown _cooldown;
         [SerializeField] private UnityEvent _action;
         
         private Patrol _patrol;
@@ -41,7 +43,11 @@ namespace Characters.Enemies
 
         public void MakeScream()
         {
-            _animator.SetTrigger(Warning);
+            if (_cooldown.IsReady)
+            {
+                _animator.SetTrigger(Warning);
+                _cooldown.Reset();
+            }
         }
 
         public void StartSummoning()

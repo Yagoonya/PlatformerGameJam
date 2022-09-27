@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Utils;
-using WorldsSwitch;
 
 namespace Characters.Player
 {
@@ -14,23 +13,25 @@ namespace Characters.Player
         [SerializeField] private float _attackRange;
         [SerializeField] private LayerMask _enemyLayers;
         [SerializeField] private LayerMask _checkLayers;
-        [SerializeField] private ReloadLevel _reload;
 
-        
+        [SerializeField] private Cooldown _attackCooldown;
+
+        private Vector2 _respawnPoint;
+
         private SpriteRenderer _sprite;
         private int _defaultLayer;
-
-        private WorldSwitcher _switcher;
-
         private Color _default;
+        
         private bool _isVisible = true;
         private bool _isDead;
         private bool _isHidden;
 
+        public bool IsVisible => _isVisible;
+
         protected override void Awake()
         {
             base.Awake();
-            _switcher = FindObjectOfType<WorldSwitcher>();
+            _respawnPoint = transform.position;
             _sprite = GetComponent<SpriteRenderer>();
             _defaultLayer = gameObject.layer;
             _default = _sprite.color;
@@ -38,8 +39,11 @@ namespace Characters.Player
 
         public void DoAttack()
         {
-            if(!_isHidden)
+            if (!_isHidden && _attackCooldown.IsReady && IsDead != true)
+            {
                 Animator.SetTrigger(Attack);
+                _attackCooldown.Reset();
+            }
         }
 
         public void SwitchVisability()
@@ -52,7 +56,7 @@ namespace Characters.Player
 
         public void HideInObject()
         {
-            if (!_isHidden && IsInteractionExist())
+            if (!_isHidden && IsInteractionExist() && IsDead != true)
             {
                 _isHidden = true;
                 Animator.SetBool(HideIn, true);
@@ -67,23 +71,40 @@ namespace Characters.Player
         private void Hide()
         {
             _isVisible = false;
-            _sprite.color = new Color(1f,1f,1f, 0.5f);
+            _sprite.color = new Color(0.5f,0.5f,0.5f);
             gameObject.layer = 9;
-        }
-
-        public void SwitchWorld()
-        {
-            _switcher.SwitchWorld();
         }
 
         public void ReloadAfterAnimation()
         {
-            _reload.Reload();
+            transform.position = _respawnPoint;
+            IsDead = false;
+            _isControllable = true;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Checkpoint"))
+            {
+                _respawnPoint = other.transform.position;
+            }
         }
 
         private void ResetToDefault()
         {
             _isVisible = true;
+            _sprite.color = _default;
+            gameObject.layer = _defaultLayer;
+        }
+
+        public void Cover()
+        {
+            gameObject.layer = 14;
+            _sprite.color = new Color(0.5f,0.5f,0.5f);
+        }
+        
+        public void Uncover()
+        {
             _sprite.color = _default;
             gameObject.layer = _defaultLayer;
         }

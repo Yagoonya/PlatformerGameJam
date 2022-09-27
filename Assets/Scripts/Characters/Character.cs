@@ -17,6 +17,8 @@ namespace Characters
         private bool _isGrounded;
         protected Vector2 _direction;
         private Rigidbody2D _rigidbody;
+
+        protected bool IsDead;
         
         protected Animator Animator;
         
@@ -24,6 +26,7 @@ namespace Characters
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
+            IsDead = false;
         }
         
         private void Update()
@@ -73,6 +76,9 @@ namespace Characters
 
         public void Dead()
         {
+            IsDead = true;
+            SetDirection(Vector2.zero);
+            _isControllable = false;
             Animator.SetTrigger(Death);
         }
 

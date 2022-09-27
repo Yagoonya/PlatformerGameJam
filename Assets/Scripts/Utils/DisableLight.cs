@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Utils
 {
     public class DisableLight : DisableObject
     {
         [SerializeField] private Collider2D _collider;
-        [SerializeField] private SpriteRenderer _sprite;
+        [SerializeField] private Light2D _sprite;
         
         public override void SetActivate(bool value)
         {

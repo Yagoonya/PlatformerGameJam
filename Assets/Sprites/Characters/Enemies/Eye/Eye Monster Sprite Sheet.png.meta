@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -954,9 +954,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Eye Monster Sprite Sheet_20: -1227395840
+      Eye Monster Sprite Sheet_2: 516598530
       Eye Monster Sprite Sheet_5: 1543719944
-      Eye Monster Sprite Sheet_1: -810066863
+      Eye Monster Sprite Sheet_16: -1618414906
       Eye Monster Sprite Sheet_9: -1007825828
       Eye Monster Sprite Sheet_37: 1557441450
       Eye Monster Sprite Sheet_39: 929792404
@@ -987,12 +987,12 @@ TextureImporter:
       Eye Monster Sprite Sheet_30: -308373555
       Eye Monster Sprite Sheet_21: -2026494837
       Eye Monster Sprite Sheet_6: 568646093
-      Eye Monster Sprite Sheet_2: 516598530
-      Eye Monster Sprite Sheet_16: -1618414906
-      Eye Monster Sprite Sheet_28: 1717241498
       Eye Monster Sprite Sheet_24: 772867594
-      Eye Monster Sprite Sheet_36: -299073365
+      Eye Monster Sprite Sheet_28: 1717241498
+      Eye Monster Sprite Sheet_1: -810066863
       Eye Monster Sprite Sheet_4: -974051183
+      Eye Monster Sprite Sheet_36: -299073365
+      Eye Monster Sprite Sheet_20: -1227395840
       Eye Monster Sprite Sheet_38: 1364265067
   spritePackingTag: 
   pSDRemoveMatte: 0

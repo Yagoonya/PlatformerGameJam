@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Checkpoint
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Interactions
   - Sound
   - InOtherWorld
-  - 
-  - 
+  - Covered
+  - BigLight
   - 
   - 
   - 
@@ -47,6 +49,12 @@ TagManager:
     locked: 0
   - name: Mid
     uniqueID: 456335079
+    locked: 0
+  - name: Cover
+    uniqueID: 3135369239
+    locked: 0
+  - name: "\u0421haracters"
+    uniqueID: 1179294159
     locked: 0
   - name: Front
     uniqueID: 1562188061
