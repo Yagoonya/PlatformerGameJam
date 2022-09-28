@@ -179,6 +179,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333638696}
+  - component: {fileID: 828164610}
+  - component: {fileID: 828164611}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
@@ -194,13 +196,56 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333638695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23, y: 0, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 624194293898393009}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &828164610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333638695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829f22f2f7244613a11bc299b17b580f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _changingValue: -10
+--- !u!114 &828164611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333638695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1589ce77b14449608d75950b826289db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.55
+  _tags:
+  - Boss
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 828164610}
+        m_TargetAssemblyTypeName: Characters.Player.HealthInteraction, Assembly-CSharp
+        m_MethodName: ApplyChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &624194293898393011
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +261,7 @@ GameObject:
   - component: {fileID: 624194293898393004}
   - component: {fileID: 624194293898393007}
   - component: {fileID: 418553590}
-  - component: {fileID: 5368748598312690669}
+  - component: {fileID: 1305445307}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -307,12 +352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e812c71e343d48088c9cf1e4d6a60141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
-  _jumpForce: 4
+  _speed: 6
+  _jumpForce: 6.5
   _groundCheck: {fileID: 624194294187865780}
   _invertScale: 0
   _isControllable: 1
   _attackPoint: {fileID: 1333638696}
+  _atackRange: {fileID: 828164611}
   _checkPoint: {fileID: 769812698}
   _attackRange: 0.4
   _enemyLayers:
@@ -429,7 +475,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.7
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: a700399ea32663540ab38ae5a29a8419, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -455,8 +501,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &5368748598312690669
-CapsuleCollider2D:
+--- !u!61 &1305445307
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -468,9 +514,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025247574, y: -0.19356292}
-  m_Size: {x: 0.9432316, y: 1.4881152}
-  m_Direction: 0
+  m_Offset: {x: -0.14081234, y: -0.23876858}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2041045, y: 1.5224628}
+  m_EdgeRadius: 0
 --- !u!1 &624194294187865785
 GameObject:
   m_ObjectHideFlags: 0

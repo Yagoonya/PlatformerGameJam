@@ -9,6 +9,7 @@ namespace Characters.Player
         private static readonly int HideIn = Animator.StringToHash("Is-Hidden");
 
         [SerializeField] private Transform _attackPoint;
+        [SerializeField] private CheckCircleOverlap _atackRange;
         [SerializeField] private Transform _checkPoint;
         [SerializeField] private float _attackRange;
         [SerializeField] private LayerMask _enemyLayers;
@@ -129,6 +130,8 @@ namespace Characters.Player
 
         public void Check()
         {
+            _atackRange.Check();
+            
             Collider2D[] hitEnemies = CheckOverlap(_attackPoint, _attackRange, _enemyLayers);
 
             foreach (var enemy in hitEnemies)

@@ -1,4 +1,5 @@
-﻿using Characters.Player;
+﻿using Characters.Enemies.Boss;
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,8 +18,16 @@ namespace Utils
             var player = other.GetComponent<Player>();
             if (player != null)
             {
+                ResetBossFight();
                 player.Dead();
             }
+        }
+
+        private void ResetBossFight()
+        {
+            var boss = FindObjectOfType<BossBehaviour>();
+            if (boss != null)
+                boss.ResetBossFight();
         }
     }
 }
