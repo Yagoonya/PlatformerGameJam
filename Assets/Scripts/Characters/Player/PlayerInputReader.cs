@@ -6,7 +6,8 @@ namespace Characters.Player
     public class PlayerInputReader : MonoBehaviour
     {
         [SerializeField] private Player _player;
-
+        [SerializeField] private PauseMenu _pauseMenu;
+        
         public void OnMovement(InputAction.CallbackContext context)
         {
             var direction = context.ReadValue<Vector2>();
@@ -26,6 +27,14 @@ namespace Characters.Player
             if (context.performed)
             {
                 _player.HideInObject();
+            }
+        }
+
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _pauseMenu.SwitchPause();
             }
         }
     }

@@ -9,7 +9,7 @@ public class BigLightBehaviour : MonoBehaviour
     private void Start()
     {
         StartCoroutine(MoveAnimation());
-        Destroy(gameObject,8f);
+        Destroy(gameObject,10f);
     }
 
     private IEnumerator MoveAnimation()

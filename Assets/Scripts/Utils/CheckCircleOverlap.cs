@@ -31,12 +31,6 @@ namespace Utils
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            Handles.color = new Color(1f, 0f, 0f, 0.1f);
-            Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
-        }
-
         [Serializable]
         public class OnOverlapEvent : UnityEvent<GameObject>
         {

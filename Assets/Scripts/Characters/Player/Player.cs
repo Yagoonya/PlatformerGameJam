@@ -43,6 +43,7 @@ namespace Characters.Player
             if (!_isHidden && _attackCooldown.IsReady && IsDead != true)
             {
                 Animator.SetTrigger(Attack);
+                _play.Play("attack");
                 _attackCooldown.Reset();
             }
         }

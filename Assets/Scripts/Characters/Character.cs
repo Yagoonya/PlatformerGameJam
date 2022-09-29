@@ -6,11 +6,12 @@ namespace Characters
     public class Character : MonoBehaviour, IMortal
     {
         [Range(0, 10)] [SerializeField] private float _speed;
-        [Range(0, 10)] [SerializeField] private float _jumpForce;
+        [Range(0, 30)] [SerializeField] private float _jumpForce;
         
         [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] private bool _invertScale;
         [SerializeField] protected bool _isControllable = true;
+        [SerializeField] protected playSounds _play;
         
         private static readonly int Death = Animator.StringToHash("Death");
         
@@ -47,6 +48,7 @@ namespace Characters
             if (_isGrounded)
             {
                 yVelocity = _jumpForce;
+                _play.Play("jump");
             }
 
             return yVelocity;
@@ -77,6 +79,7 @@ namespace Characters
         public void Dead()
         {
             IsDead = true;
+            _play.Play("death");
             SetDirection(Vector2.zero);
             _isControllable = false;
             Animator.SetTrigger(Death);

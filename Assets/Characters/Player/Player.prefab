@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 6
-  _jumpForce: 6.5
+  _jumpForce: 8
   _groundCheck: {fileID: 624194294187865780}
   _invertScale: 0
   _isControllable: 1

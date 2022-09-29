@@ -12,7 +12,9 @@ namespace Characters.Enemies.Boss
         [SerializeField] private Light2D _bossFightLight;
         [SerializeField] private Light2D _worldLight;
         [SerializeField] private Health _tentacleHealthl;
-        
+
+        [SerializeField] private playSounds _bossSounds;
+
         private Health _bossHealth;
         
         private bool _isFightEnd = false;
@@ -67,6 +69,7 @@ namespace Characters.Enemies.Boss
         {
             StopAllCoroutines();
             StartState(Dead());
+            _bossSounds.Play("death");
             _isFightEnd = true;
             _animator.SetTrigger(Death);
         }

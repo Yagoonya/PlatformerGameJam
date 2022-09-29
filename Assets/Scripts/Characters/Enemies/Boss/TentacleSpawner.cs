@@ -14,6 +14,7 @@ namespace Characters.Enemies.Boss
         [SerializeField] private float _tentcleTime;
         [SerializeField] private float _timerOn;
         [SerializeField] private float _timerOff;
+        [SerializeField] private playSounds _tentacleSounds;
 
         private int randomPoint;
         private IEnumerator _current;
@@ -26,7 +27,9 @@ namespace Characters.Enemies.Boss
             randomPoint = Random.Range(0, _points.Length);
             var localX = randomPoint % 2 != 0 ? -1 : 1;
             _tentacle.localScale = new Vector3(localX, 1, 1);
+            _tentacleSounds.Play("attack");
             _tentacle.position = _points[randomPoint]._startPos.position;
+            
             StartCoroutine(TentacleMovement());
         }
 
