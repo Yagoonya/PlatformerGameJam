@@ -17,7 +17,7 @@ namespace Characters
         
         private bool _isGrounded;
         protected Vector2 _direction;
-        private Rigidbody2D _rigidbody;
+        protected Rigidbody2D _rigidbody;
 
         protected bool IsDead;
         

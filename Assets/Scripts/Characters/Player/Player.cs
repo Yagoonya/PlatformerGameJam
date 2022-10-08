@@ -60,11 +60,14 @@ namespace Characters.Player
         {
             if (!_isHidden && IsInteractionExist() && IsDead != true)
             {
+                //_isControllable = true;
+                SetDirection(Vector2.zero);
                 _isHidden = true;
                 Animator.SetBool(HideIn, true);
             }
             else
             {
+                //_isControllable = false;
                 _isHidden = false;
                 Animator.SetBool(HideIn, false);
             }
