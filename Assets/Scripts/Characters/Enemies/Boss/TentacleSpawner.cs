@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using Utils;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
@@ -10,7 +11,7 @@ namespace Characters.Enemies.Boss
     {
         [SerializeField] private TentaclePoint[] _points;
         [SerializeField] private Transform _tentacle;
-        [SerializeField] private CircleCollider2D _hitCollider;
+        [SerializeField] private Animator _tentacleAnimator;
         [SerializeField] private float _tentcleTime;
         [SerializeField] private float _timerOn;
         [SerializeField] private float _timerOff;
@@ -18,6 +19,7 @@ namespace Characters.Enemies.Boss
 
         private int randomPoint;
         private IEnumerator _current;
+        private static readonly int Attack = Animator.StringToHash("Attack");
 
         public float TentacleTime => _tentcleTime;
         
@@ -36,10 +38,9 @@ namespace Characters.Enemies.Boss
         public IEnumerator TentacleMovement()
         {
             StartState(Move(_tentacle, _points[randomPoint]._endPos,_timerOn));
-            _hitCollider.enabled = true;
-            yield return new WaitForSeconds(_tentcleTime/2.5f);
-            _hitCollider.enabled = false;
-            yield return new WaitForSeconds(_tentcleTime/2f);
+            yield return new WaitForSeconds(_tentcleTime);
+            _tentacleAnimator.SetTrigger(Attack);
+            yield return new WaitForSeconds(_tentcleTime);
             StartState(Move(_tentacle, _points[randomPoint]._startPos, _timerOff));
             yield return new WaitForSeconds(_tentcleTime);
         }

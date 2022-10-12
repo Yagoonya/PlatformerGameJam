@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 4435974216489024098}
   - component: {fileID: 4435974216489024096}
   - component: {fileID: 4435974216489024108}
-  - component: {fileID: 4435974216489024111}
-  - component: {fileID: 4435974216489024110}
-  - component: {fileID: 4435974216489024097}
   - component: {fileID: 4435974216489024109}
   - component: {fileID: 9115340247738498409}
+  - component: {fileID: 1221285825}
   m_Layer: 16
   m_Name: Tentacle
   m_TagString: Boss
@@ -32,11 +30,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4435974216489024103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.58, y: -15.13, z: 0}
+  m_LocalPosition: {x: -10.58, y: -24.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7529321178289384778}
+  - {fileID: 7332982753667306622}
   m_Father: {fileID: 4435974218390965341}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c39cca851b74fe997c3365cec662465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
+  _health: 200
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -151,65 +150,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.51, y: 0}
   m_Size: {x: 5.92, y: 1.12}
   m_Direction: 1
---- !u!58 &4435974216489024111
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4435974216489024103}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.88, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.7
---- !u!114 &4435974216489024110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4435974216489024103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f78e5429ba40ee8c7fdc20e86fbd72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 17920
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4435974216489024097}
-        m_TargetAssemblyTypeName: Utils.ReloadLevel, Assembly-CSharp
-        m_MethodName: KillPlayer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4435974216489024097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4435974216489024103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50af9cfb0256407db8b31af30e18b71d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &4435974216489024109
 Animator:
   serializedVersion: 4
@@ -246,6 +186,19 @@ MonoBehaviour:
   _sounds:
   - _id: attack
     _clip: {fileID: 8300000, guid: b5e69e09a4d8cc145830ac59f12c760f, type: 3}
+--- !u!114 &1221285825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435974216489024103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca87512e0fc209408eba508a62e65e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRange: {fileID: 3406267529412289828}
 --- !u!1 &4435974216650141025
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,10 +257,10 @@ MonoBehaviour:
   - _startPos: {fileID: 4435974217306163131}
     _endPos: {fileID: 4435974216652795241}
   _tentacle: {fileID: 4435974216489024100}
-  _hitCollider: {fileID: 4435974216489024111}
-  _tentcleTime: 5
-  _timerOn: 50
-  _timerOff: 250
+  _tentacleAnimator: {fileID: 4435974216489024109}
+  _tentcleTime: 2
+  _timerOn: 6
+  _timerOff: 15
   _tentacleSounds: {fileID: 9115340247738498409}
 --- !u!1 &4435974216652795240
 GameObject:
@@ -443,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4435974217306163130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.85, y: -5.36, z: 0}
+  m_LocalPosition: {x: 17.03, y: -5.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -506,7 +459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4435974217361270614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.77, y: -5.3600063, z: 0}
+  m_LocalPosition: {x: -18.06, y: -5.3600063, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -538,7 +491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4435974217444860651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.77, y: -2.62, z: 0}
+  m_LocalPosition: {x: -18.27, y: -0.9499955, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -601,7 +554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4435974217867346676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.85, y: -2.6200016, z: 0}
+  m_LocalPosition: {x: 17.449991, y: -0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -713,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c39cca851b74fe997c3365cec662465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
+  _health: 200
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -756,6 +709,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!95 &4435974218390965339
 Animator:
   serializedVersion: 4
@@ -794,6 +759,8 @@ MonoBehaviour:
   _worldLight: {fileID: 0}
   _tentacleHealthl: {fileID: 4435974216489024096}
   _bossSounds: {fileID: 7370335979477936128}
+  _mainMusic: {fileID: 0}
+  _bossMusic: {fileID: 0}
 --- !u!114 &7370335979477936128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +909,81 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5346522548821832056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7332982753667306622}
+  - component: {fileID: 3406267529412289828}
+  - component: {fileID: 3372992764404146831}
+  m_Layer: 16
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7332982753667306622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346522548821832056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4435974216489024100}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3406267529412289828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346522548821832056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1589ce77b14449608d75950b826289db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1
+  _tags:
+  - Player
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3372992764404146831}
+        m_TargetAssemblyTypeName: Utils.ReloadLevel, Assembly-CSharp
+        m_MethodName: KillPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3372992764404146831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346522548821832056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50af9cfb0256407db8b31af30e18b71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7444314391306043607
 GameObject:
   m_ObjectHideFlags: 0

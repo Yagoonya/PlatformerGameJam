@@ -19,7 +19,7 @@ namespace Characters.Enemies.Boss
         [SerializeField] private GameObject _bossMusic;
 
         private Health _bossHealth;
-        
+
         private bool _isFightEnd = false;
         private IEnumerator _current;
         private Animator _animator;
@@ -46,25 +46,39 @@ namespace Characters.Enemies.Boss
         {
             _bossHealth.SetHealth(_healthStart);
             _tentacleHealthl.SetHealth(_healthStart);
-            _worldLight.intensity = Mathf.Lerp(0, 0.45f, 2500);
-            _bossFightLight.intensity = Mathf.Lerp(0f, 0.2f, 2500);
-            yield return new WaitForSeconds(6f);
+            yield return LightAnimation(0.45f,0f, 0.75f,_worldLight);
+            yield return new WaitForSeconds(3f);
+            yield return LightAnimation(0f,0.3f, 10f, _bossFightLight);
             StartState(DoAttack());
         }
 
-        private void DoAttackAnimatiom()
+        private IEnumerator LightAnimation(float start, float end, float _time, Light2D light)
+        {
+            var time = 0f;
+
+            while (time < _time)
+            {
+                time += Time.deltaTime;
+                var progress = time / _time;
+                var temp = Mathf.Lerp(start, end, progress);
+                light.intensity = temp;
+                yield return null;
+            }
+        }
+
+        private void DoAttackAnimation()
         {
             _animator.SetTrigger(Attack);
         }
-        
+
         private IEnumerator DoAttack()
         {
             while (!_isFightEnd)
             {
                 _tentacleSpawner.Spawn();
                 yield return _tentacleSpawner.TentacleMovement();
-                DoAttackAnimatiom();
-                yield return new WaitForSeconds(_tentacleSpawner.TentacleTime * 1.5f);
+                DoAttackAnimation();
+                yield return new WaitForSeconds(_tentacleSpawner.TentacleTime);
             }
         }
 
