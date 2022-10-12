@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 using Utils;
 
 namespace Characters.Player
@@ -16,6 +17,10 @@ namespace Characters.Player
         [SerializeField] private LayerMask _checkLayers;
 
         [SerializeField] private Cooldown _attackCooldown;
+
+        [SerializeField] private CinemachineVirtualCamera _camera;
+        [SerializeField] private Transform _lookDownTarget;
+        [SerializeField] private Transform _defeaultTarget;
 
         private Vector2 _respawnPoint;
 
@@ -47,37 +52,32 @@ namespace Characters.Player
                 _attackCooldown.Reset();
             }
         }
-
-        public void SwitchVisability()
-        {
-            if(_isVisible)
-                Hide();
-            else
-                ResetToDefault();
-        }
-
+        
         public void HideInObject()
         {
             if (!_isHidden && IsInteractionExist() && IsDead != true)
             {
-                //_isControllable = true;
                 SetDirection(Vector2.zero);
                 _isHidden = true;
                 Animator.SetBool(HideIn, true);
             }
             else
             {
-                //_isControllable = false;
                 _isHidden = false;
                 Animator.SetBool(HideIn, false);
             }
         }
 
-        private void Hide()
+        public void Hide()
         {
             _isVisible = false;
             _sprite.color = new Color(0.5f,0.5f,0.5f);
             gameObject.layer = 9;
+        }
+
+        public void InW2Bush()
+        {
+            gameObject.layer = 17;
         }
 
         public void ReloadAfterAnimation()
@@ -95,7 +95,7 @@ namespace Characters.Player
             }
         }
 
-        private void ResetToDefault()
+        public void ResetToDefault()
         {
             _isVisible = true;
             _sprite.color = _default;
@@ -148,6 +148,16 @@ namespace Characters.Player
         public void SwitchControllability()
         {
             _isControllable = !_isControllable;
+        }
+
+        public void LookDown()
+        {
+            _camera.Follow = _lookDownTarget;
+        }
+
+        public void LookUp()
+        {
+            _camera.Follow = _defeaultTarget;
         }
         
         

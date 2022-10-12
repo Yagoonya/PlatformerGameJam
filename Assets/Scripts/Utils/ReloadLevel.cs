@@ -27,7 +27,9 @@ namespace Utils
         {
             var boss = FindObjectOfType<BossBehaviour>();
             if (boss != null)
+            {
                 boss.ResetBossFight();
+            }
         }
     }
 }

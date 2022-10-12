@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5742152878110793536}
   - component: {fileID: 7865772845283070937}
   - component: {fileID: 1652091021137127891}
+  - component: {fileID: 6078238250480976056}
+  - component: {fileID: 2848322531330816253}
   m_Layer: 0
   m_Name: BushW2
   m_TagString: Untagged
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1562188061
+  m_SortingLayerID: 322130835
   m_SortingLayer: 5
   m_SortingOrder: 5
   m_Sprite: {fileID: -1325679481, guid: 99be86f5cc5763047843c162900843ec, type: 3}
@@ -208,6 +210,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6078238250480976056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742152878110793662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b736ccfc42f94493421b1ac44f78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lightSave: 0
+--- !u!58 &2848322531330816253
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742152878110793662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.01
 --- !u!1001 &177416862533330322
 PrefabInstance:
   m_ObjectHideFlags: 0

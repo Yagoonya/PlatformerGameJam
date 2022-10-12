@@ -26,7 +26,7 @@ TagManager:
   - Covered
   - BigLight
   - Boss
-  - 
+  - InW2Bush
   - 
   - 
   - 
@@ -56,6 +56,12 @@ TagManager:
     locked: 0
   - name: "\u0421haracters"
     uniqueID: 1179294159
+    locked: 0
+  - name: Covers
+    uniqueID: 322130835
+    locked: 0
+  - name: Enemy
+    uniqueID: 3962980963
     locked: 0
   - name: Front
     uniqueID: 1562188061

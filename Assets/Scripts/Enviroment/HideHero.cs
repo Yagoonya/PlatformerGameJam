@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class HideHero : MonoBehaviour
 {
+    [SerializeField] private bool _lightSave;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -10,7 +12,33 @@ public class HideHero : MonoBehaviour
             var player = other.GetComponent<Player>();
             if (player != null)
             {
-                player.SwitchVisability();
+                if (_lightSave)
+                {
+                    player.Hide();
+                }
+                else
+                {
+                    player.InW2Bush();
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var player = other.GetComponent<Player>();
+            if (player != null)
+            {
+                if (_lightSave)
+                {
+                    player.Hide();
+                }
+                else
+                {
+                    player.InW2Bush();
+                }
             }
         }
     }
@@ -20,7 +48,7 @@ public class HideHero : MonoBehaviour
         var player = other.GetComponent<Player>();
         if (player != null)
         {
-            player.SwitchVisability();
+            player.ResetToDefault();
         }
     }
     

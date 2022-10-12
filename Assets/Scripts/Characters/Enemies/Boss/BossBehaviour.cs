@@ -15,6 +15,9 @@ namespace Characters.Enemies.Boss
 
         [SerializeField] private playSounds _bossSounds;
 
+        [SerializeField] private GameObject _mainMusic;
+        [SerializeField] private GameObject _bossMusic;
+
         private Health _bossHealth;
         
         private bool _isFightEnd = false;
@@ -96,6 +99,8 @@ namespace Characters.Enemies.Boss
 
         public void ResetBossFight()
         {
+            _bossMusic.SetActive(false);
+            _mainMusic.SetActive(true);
             _isFightEnd = false;
             StopAllCoroutines();
             _worldLight.intensity = 0.45f;

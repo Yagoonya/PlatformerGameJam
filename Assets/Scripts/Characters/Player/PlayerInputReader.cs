@@ -7,7 +7,7 @@ namespace Characters.Player
     {
         [SerializeField] private Player _player;
         [SerializeField] private PauseMenu _pauseMenu;
-        
+
         public void OnMovement(InputAction.CallbackContext context)
         {
             var direction = context.ReadValue<Vector2>();
@@ -37,6 +37,18 @@ namespace Characters.Player
                 _pauseMenu.SwitchPause();
             }
         }
+
+        public void OnLookDown(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                _player.LookDown();
+            }
+
+            if (context.canceled)
+            {
+                _player.LookUp();
+            }
+        }
     }
 }
-
