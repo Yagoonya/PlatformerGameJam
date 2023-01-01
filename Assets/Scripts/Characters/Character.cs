@@ -67,7 +67,7 @@ namespace Characters
             return yVelocity;
         }
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             var xVelocity = _direction.x * _speed;
             var yVelocity = CalculateYVelocity();

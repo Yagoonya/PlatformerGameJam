@@ -31,6 +31,7 @@ namespace Characters.Player
         private bool _isVisible = true;
         private bool _isDead;
         private bool _isHidden;
+        private static readonly int XVelocity = Animator.StringToHash("xVelocity");
 
         public bool IsVisible => _isVisible;
 
@@ -52,7 +53,13 @@ namespace Characters.Player
                 _attackCooldown.Reset();
             }
         }
-        
+
+        protected override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            Animator.SetBool(XVelocity, _direction.x != 0);
+        }
+
         public void HideInObject()
         {
             if (!_isHidden && IsInteractionExist() && IsDead != true)
